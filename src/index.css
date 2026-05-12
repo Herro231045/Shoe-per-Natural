@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-stone: #F5F2ED;
+  --color-brand-cream: #FDFCFB;
+  --color-brand-ink: #1A1A1A;
+  --color-brand-moss: #5A5A40;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-stone text-brand-ink font-sans antialiased;
+  }
+}
+
+@layer components {
+  .luxury-button {
+    @apply inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-medium tracking-wide uppercase transition-all duration-300;
+  }
+  
+  .luxury-button-primary {
+    @apply bg-brand-ink text-white hover:bg-black hover:scale-105;
+  }
+  
+  .luxury-button-secondary {
+    @apply border border-brand-ink/20 hover:border-brand-ink hover:bg-white/50;
+  }
+
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/20 rounded-3xl overflow-hidden;
+  }
+}
+
+@keyframes reveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
